@@ -4,7 +4,7 @@ import com.idiotleon.demodiwdagger2.MainActivity;
 
 import dagger.Component;
 
-@Component
+@Component(modules = WheelsModule.class)
 public interface CarComponent {
     // For constructor injection
     Car getCar();
