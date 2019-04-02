@@ -7,16 +7,19 @@ import com.idiotleon.demodiwdagger2.car.Car;
 import com.idiotleon.demodiwdagger2.car.CarComponent;
 import com.idiotleon.demodiwdagger2.car.DaggerCarComponent;
 
+import javax.inject.Inject;
+
 public class MainActivity extends AppCompatActivity {
 
-    private Car car;
+    @Inject
+    Car car;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         CarComponent component = DaggerCarComponent.create();
-        car = component.getCar();
+        component.inject(MainActivity.this);
         car.drive();
     }
 }
