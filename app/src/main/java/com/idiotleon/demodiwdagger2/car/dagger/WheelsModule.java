@@ -7,8 +7,10 @@ import com.idiotleon.demodiwdagger2.car.Wheels;
 import dagger.Module;
 import dagger.Provides;
 
+// Marking the class as abstract will avoid instantiating non-static methods.
+// If all of the methods are static, the class is better to be abstract.
 @Module
-public class WheelsModule {
+public abstract class WheelsModule {
 
     @Provides
     static Rims provideRims() {
