@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.idiotleon.demodiwdagger2.car.Car;
 import com.idiotleon.demodiwdagger2.car.dagger.CarComponent;
 import com.idiotleon.demodiwdagger2.car.dagger.DaggerCarComponent;
+import com.idiotleon.demodiwdagger2.car.dagger.DieselEngineModule;
 
 import javax.inject.Inject;
 
@@ -18,8 +19,11 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        CarComponent component = DaggerCarComponent.create();
+        CarComponent component = DaggerCarComponent.builder()
+                .dieselEngineModule(new DieselEngineModule(14))
+                .build();
         component.inject(MainActivity.this);
+
         car.drive();
     }
 }
