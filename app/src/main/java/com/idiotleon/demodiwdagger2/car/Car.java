@@ -14,7 +14,8 @@ public class Car {
 
     // step 1: to inject the Constructor
     @Inject
-    public Car(Wheels wheels) {
+    public Car(Engine engine, Wheels wheels) {
+        this.engine = engine;
         this.wheels = wheels;
     }
 
@@ -25,6 +26,7 @@ public class Car {
     }
 
     public void drive() {
+        engine.start();
         Log.d(TAG, "driving");
     }
 }

@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.idiotleon.demodiwdagger2.car.Car;
-import com.idiotleon.demodiwdagger2.car.CarComponent;
-import com.idiotleon.demodiwdagger2.car.DaggerCarComponent;
+import com.idiotleon.demodiwdagger2.car.dagger.CarComponent;
+import com.idiotleon.demodiwdagger2.car.dagger.DaggerCarComponent;
 
 import javax.inject.Inject;
 
